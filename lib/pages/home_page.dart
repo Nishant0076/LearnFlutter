@@ -1,3 +1,4 @@
+import 'package:first_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,7 +18,22 @@ class HomePage extends StatelessWidget {
           child: Text("Welcome to $days days of Flutter by $name"),
         ),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+          child: Column(
+        children: [
+          SizedBox(
+            height: 40.0,
+          ),
+          ElevatedButton(
+              child: Text("Back"),
+              style: TextButton.styleFrom(
+                minimumSize: Size(150, 40),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
+              })
+        ],
+      )),
     );
   }
 }
